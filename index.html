@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Verificador de voto</title>
+</head>
+<body>
+  <div class="container">
+    <div class="form">
+      <h1>Verificador de voto</h1>
+      <label>
+        Digite a idade:
+        <input type="number" id="idade">
+      </label>
+      <button id="btn">Verificar</button>
+    </div>
+    <div id="resultado"></div>
+  </div>
+
+  <script>
+    var idade = document.getElementById('idade')
+    var resultado = document.getElementById('resultado')
+
+    var btn = document.getElementById("btn")
+
+    btn.addEventListener("click", function () {
+      if(idade.value < 16){
+        resultado.innerText = "Não é votante!"
+      } else if(idade.value >= 16 && idade.value < 18){
+        resultado.innerText = "Voto opcional!"
+      } else if(idade.value >= 18 && idade.value > 70){
+        resultado.innerText = "Voto obrigatório!"
+      } else {
+        resultado.innerText = "Voto opcional!"
+      }
+    })
+  </script>
+</body>
+</html>
